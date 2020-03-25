@@ -4,9 +4,7 @@ function isPalindrome (s) {
   const removeSpaces = [...convertToLowerCase].filter(char => char !== ' ').join('');
   const reverseString = [...removeSpaces].reverse().join('');
   const palindromeConfirmed = reverseString === removeSpaces;
-  return palindromeConfirmed ? s : false;
+  return !!(palindromeConfirmed || s === '');
 };
-
-console.log(isPalindrome('Murder for a jar of red rum'));
 
 module.exports = isPalindrome;
