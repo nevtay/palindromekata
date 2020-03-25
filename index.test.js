@@ -5,12 +5,51 @@ describe('palindrome function', () => {
     const anything = isPalindrome('soba');
     expect(anything).toEqual(expect.anything());
   });
-  it('should return the string if said string is a palindrome', () => {
-    const stringType = isPalindrome('10001');
-    expect(stringType).toEqual('10001');
+
+  it('should return true if argument is a valid palindrome', () => {
+    const validrome = isPalindrome('10001');
+    expect(validrome).toBeTruthy();
   });
-  it('should return the string if said string is a palindrome AND has spaces', () => {
-    const palindromeSentence = isPalindrome('Murder for a jar of red rum');
-    expect(palindromeSentence).toEqual('Murder for a jar of red rum');
+
+  it('should return false if argument is an invalid palindrome', () => {
+    const invalidrome = isPalindrome('🚹💕🚺 = 🚼');
+    expect(invalidrome).toBeFalsy();
+  });
+
+  it('should return true if argument is empty', () => {
+    const emptyPalindrome = isPalindrome('');
+    expect(emptyPalindrome).toBeTruthy();
+  });
+
+  it('should return true if argument is a valid palindrome AND has spaces', () => {
+    const palindromeSentence = isPalindrome('murder for a jar of red rum');
+    expect(palindromeSentence).toBeTruthy();
+  });
+
+  it('should return true if argument is a valid palindrome but has mixed casing', () => {
+    const palindromeSentence = isPalindrome('MuRder FoR a JaR oF rEd RUM');
+    expect(palindromeSentence).toBeTruthy();
+  });
+
+  it('should return true if argument is single character', () => {
+    const oneCharPalindrome = isPalindrome('a');
+    const oneCharPalindromeTwo = isPalindrome('b');
+    expect(oneCharPalindrome).toBeTruthy();
+    expect(oneCharPalindromeTwo).toBeTruthy();
+  });
+
+  it('should return true if argument is a single space', () => {
+    const oneSpacePalindrome = isPalindrome(' ');
+    expect(oneSpacePalindrome).toBeTruthy();
+  });
+
+  it('should return true if argument is made of only a single character', () => {
+    const oneSpacePalindrome = isPalindrome('!🥱 🥱🥱 🥱🥱🥱 🥱🥱🥱🥱 🥱🥱!');
+    expect(oneSpacePalindrome).toBeTruthy();
+  });
+
+  it('should return true if argument is a valid palindrome from a non-english language', () => {
+    const oneSpacePalindrome = isPalindrome('莫妮卡郑 郑卡妮莫');
+    expect(oneSpacePalindrome).toBeTruthy();
   });
 });
