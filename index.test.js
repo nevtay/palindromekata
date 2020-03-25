@@ -11,6 +11,13 @@ describe('palindrome function', () => {
     expect(validrome).toBeTruthy();
   });
 
+  it('should work if argument is a number', () => {
+    const number = isPalindrome(10001);
+    const numberTwo = isPalindrome(-23);
+    expect(number).toBeTruthy();
+    expect(numberTwo).toBeFalsy();
+  });
+
   it('should return false if argument is an invalid palindrome', () => {
     const invalidrome = isPalindrome('🚹💕🚺 = 🚼');
     expect(invalidrome).toBeFalsy();
