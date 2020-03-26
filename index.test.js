@@ -11,7 +11,7 @@ describe('palindrome function', () => {
     expect(validrome).toBeTruthy();
   });
 
-  it('should work if argument is a number', () => {
+  it('should work if argument is a valid whole number', () => {
     const number = isPalindrome(10001);
     const numberTwo = isPalindrome(-23);
     expect(number).toBeTruthy();
@@ -51,7 +51,7 @@ describe('palindrome function', () => {
   });
 
   it('should return true if argument is made of only a single character', () => {
-    const oneSpacePalindrome = isPalindrome('!🥱 🥱🥱 🥱🥱🥱 🥱🥱🥱🥱 🥱🥱!');
+    const oneSpacePalindrome = isPalindrome('🥱 🥱🥱 🥱🥱🥱 🥱🥱🥱🥱 🥱🥱');
     expect(oneSpacePalindrome).toBeTruthy();
   });
 
