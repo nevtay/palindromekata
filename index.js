@@ -1,15 +1,15 @@
 function isPalindrome (s) {
-  const convertToString = String(s);
+  const argsInString = String(s);
 
-  const convertToLowerCase = convertToString.toLowerCase();
+  const stringToLowerCase = argsInString.toLowerCase();
 
-  const removeSpaces = [...convertToLowerCase].filter(char => char !== ' ').join('');
+  const removeSpaces = [...stringToLowerCase].filter(char => char !== ' ').join('');
 
   const reverseString = [...removeSpaces].reverse().join('');
 
-  const palindromeConfirmed = reverseString === removeSpaces;
+  const isValidPalindrome = reverseString === removeSpaces;
 
-  return !!(palindromeConfirmed || s === '');
+  return isValidPalindrome;
 };
 
 module.exports = isPalindrome;
